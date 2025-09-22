@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <title>শারদীয় দুর্গাপূজা আমন্ত্রণ</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Noto Serif Bengali', sans-serif;
+      background: linear-gradient(135deg, #ffe5ec, #e0c3fc, #8ec5fc);
+      background-size: 400% 400%;
+      animation: gradientMove 15s ease infinite;
+      text-align: center;
+      overflow: hidden;
+      color: #4a2c2a;
+    }
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      padding: 20px;
+      position: relative;
+      z-index: 2;
+      animation: fadeIn 2.5s ease-in-out;
+    }
+    h1 {
+      font-size: 52px;
+      color: #c1121f;
+      text-shadow: 0 0 15px #fff, 0 0 25px #ffd166;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .invite {
+      background: rgba(255,255,255,0.85);
+      border-radius: 20px;
+      padding: 25px;
+      margin: 30px auto;
+      width: 80%;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+      animation: zoomIn 1.5s ease-in-out;
+    }
+    @keyframes zoomIn {
+      from { transform: scale(0.8); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #222;
+      text-shadow: 1px 1px 3px #fff;
+    }
+
+    /* Balloons */
+    .balloon {
+      position: absolute;
+      top: -150px;
+      width: 60px;
+      height: 80px;
+      border-radius: 50% 50% 45% 45%;
+      animation: fall 10s linear infinite;
+      z-index: 1;
+    }
+    .balloon::after {
+      content: "";
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      width: 2px;
+      height: 25px;
+      background: #333;
+      transform: translateX(-50%);
+    }
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0.8; }
+    }
+
+    /* Flower burst at start */
+    .burst {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #ff6f61, #d63384);
+      animation: burstAnim 2s ease-out forwards;
+    }
+    @keyframes burstAnim {
+      from { transform: translate(0,0) scale(0.5); opacity: 1; }
+      to { transform: translate(var(--x), var(--y)) scale(1.5); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌸 শারদীয় দুর্গাপূজার শুভেচ্ছা 🌸</h1>
+    
+    <div class="invite">
+      <p>
+       <font color="indigo" 🙏 তোমাকে ও তোমার পরিবারকে জানাই  
+        <b> <h2>শারদীয় দুর্গাপূজার অশেষ শুভেচ্ছা ও অভিনন্দন।</b> </h2> </font>
+      </p>
+      <p>
+          <font color="brown"> <h5>ঢাকের বাধ্য, শঙ্খ ধ্বনি ছড়িয়ে দিতে শান্তির বাণী, বছর শেষে আবার এলো মা দুর্গার আগমনী মুছে যাক ধরা-ব্যাধি মুছে যাক গ্লানি শুদ্ধ হোক, সুন্দর হোক,  জগতের সকল প্রাণী।✨
+          </h5> </font> </p>
+      <hr>
+      <p> <font color="darkorange"
+        ✨  তোমাকে ও তোমার পরিবারের সকলকে  আমাদের দুর্গোৎসবে সাদর আমন্ত্রণ রইল ✨ <br><br>
+        📍 স্থান: আমাদের পুজোমন্ডপ, <h4> উত্তর বালা বাড়ী,পিঠাবাড়ী,কাজুলিয়া,গোপালগঞ্জ সদর,গোপালগঞ্জ  </h4> <br>
+        📅 তারিখ: মহাষষ্ঠী থেকে বিজয়া দশমী <br>
+        🕔 সময়: সকাল পূজা শুরু হবে। </font>
+     </p>
+    </div>
+
+    <footer> 
+        <div style="background-color:magenta;"
+     <h2> ❤️ Developer: Utsa Bala Riju </h2>
+            </div>
+    </footer>
+  </div>
+     
+
+  <!-- Script for balloons & burst -->
+    <!--Developer: Utsa Bala Riju -- >
+  <script>
+    // Balloon colors
+    const balloonColors = ["#ff6f61", "#ffd166", "#77dd77", "#87ceeb", "#f78da7", "#c1121f"];
+
+    function createBalloon() {
+      const balloon = document.createElement("div");
+      balloon.classList.add("balloon");
+      balloon.style.left = Math.random() * 100 + "vw";
+      balloon.style.background = radial-gradient(circle at 30% 30%, ${balloonColors[Math.floor(Math.random()*balloonColors.length)]}, #444);
+      balloon.style.animationDuration = (6 + Math.random() * 5) + "s";
+      document.body.appendChild(balloon);
+      setTimeout(() => balloon.remove(), 10000);
+    }
+
+    setInterval(createBalloon, 700);
+
+    // Flower burst on load
+    function flowerBurst() {
+      for (let i = 0; i < 35; i++) {
+        const burst = document.createElement("div");
+        burst.classList.add("burst");
+        burst.style.left = "50vw";
+        burst.style.top = "50vh";
+        burst.style.background = radial-gradient(circle, ${balloonColors[Math.floor(Math.random()*balloonColors.length)]}, #d63384);
+        burst.style.setProperty("--x", (Math.random() * 400 - 200) + "px");
+        burst.style.setProperty("--y", (Math.random() * 400 - 200) + "px");
+        document.body.appendChild(burst);
+        setTimeout(() => burst.remove(), 2000);
+      }
+    }
+    window.onload=flowerBrust;
+</script>
+</body>
+</html>
